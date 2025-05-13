@@ -32,7 +32,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo $GITHUB_TOKEN | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
-          docker tag app ghcr.io/${{ github.repository_owner }}/app:latest
-          docker push ghcr.io/${{ github.repository_owner }}/app:latest
+          docker tag app ghcr.io/${{ github.repository_owner }}/${{ github.repository }}/app:latest
+          docker push ghcr.io/${{ github.repository_owner }}/${{ github.repository }}/app:latest
 
 
