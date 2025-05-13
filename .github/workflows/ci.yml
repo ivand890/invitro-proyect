@@ -29,8 +29,8 @@ jobs:
 
       - name: Push Docker image to GitHub Container Registry
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GHCR_PAT: ${{ secrets.GHCR_PAT }}
         run: |
-          echo $GITHUB_TOKEN | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
+          echo $GHCR_PAT | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
           docker tag app ghcr.io/${{ github.repository }}/app:latest
           docker push ghcr.io/${{ github.repository }}/app:latest
