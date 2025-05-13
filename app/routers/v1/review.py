@@ -14,9 +14,9 @@ class FeedbackResponse(BaseModel):
     readability_score: float
     suggestions: list[str]
 
-router = APIRouter(prefix="/review", tags=["review"])
+review_router = APIRouter(prefix="/review")
 
-@router.post("/feedback", response_model=FeedbackResponse)
+@review_router.post("/feedback", response_model=FeedbackResponse)
 def review_feedback(request: ReviewRequest) -> FeedbackResponse:
     """Endpoint to receive a review and return AI-generated feedback."""
     return FeedbackResponse(**generate_feedback(request.review))
