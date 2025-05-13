@@ -5,11 +5,13 @@ from app.services.feedback_service import generate_feedback
 
 class ReviewRequest(BaseModel):
     """Request model for submitting a product review."""
+
     review: str
 
 
 class FeedbackResponse(BaseModel):
     """Response model for structured feedback."""
+
     sentiment: str
     readability_score: float
     suggestions: list[str]
