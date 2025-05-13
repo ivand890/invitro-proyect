@@ -3,6 +3,7 @@ from .readability import calculate_readability
 from .sentiment import analyze_sentiment
 from .suggestions import generate_suggestions
 
+
 class ReviewAnalyzer(ReviewAnalyzerInterface):
     """
     A mock class to analyze product reviews.
@@ -20,5 +21,3 @@ class ReviewAnalyzer(ReviewAnalyzerInterface):
     def get_score(self, review: str) -> float:
         """Calculate the readability score of the review."""
         return calculate_readability(review)
-
-

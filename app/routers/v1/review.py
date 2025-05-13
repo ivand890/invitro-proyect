@@ -14,7 +14,9 @@ class FeedbackResponse(BaseModel):
     readability_score: float
     suggestions: list[str]
 
+
 review_router = APIRouter(prefix="/review")
+
 
 @review_router.post("/feedback", response_model=FeedbackResponse)
 def review_feedback(request: ReviewRequest) -> FeedbackResponse:

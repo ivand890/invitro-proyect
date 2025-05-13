@@ -1,5 +1,6 @@
 from app.models.ai.mock import ReviewAnalyzer
 
+
 def generate_feedback(review: str) -> dict:
     """
     Generate structured feedback for a product review.
