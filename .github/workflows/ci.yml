@@ -21,11 +21,11 @@ jobs:
 
       - name: Run tests
         run: |
-          docker-compose run --rm --env PYTHONPATH=. app pytest
+          docker compose run --rm --env PYTHONPATH=. app pytest
 
       - name: Run lint
         run: |
-          docker-compose run --rm --env PYTHONPATH=. app flake8 app/
+          docker compose run --rm --env PYTHONPATH=. app flake8 app/
 
       - name: Push Docker image to GitHub Container Registry
         env:
